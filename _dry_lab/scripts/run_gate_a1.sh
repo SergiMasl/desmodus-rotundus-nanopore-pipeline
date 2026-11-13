@@ -5,7 +5,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem=16GB
 #SBATCH --partition=Centaurus
-#SBATCH --output=/users/smaslini/vamp/binf6350_001/logs/gate_a1_%j.out
+#SBATCH --output=~/vamp/binf6350_001/logs/gate_a1_%j.out
 
 set -euo pipefail
 P=~/vamp/binf6350_001
