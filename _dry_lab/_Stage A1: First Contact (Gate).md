@@ -117,26 +117,12 @@ So that table is both runs combined, and my numbers reconcile exactly.
 - Run 2 unblock rate is much higher (14.3% vs 5.85% of all reads), consistent with more pore blocking after the restart. Relevant to Pair F's question.
 - Watch-out: `qc_nanopore.py` prints passed bases with `:.3f` (3 decimal places), giving `0.053` for Run 2, which is only 2 significant figures. Gate asks for 3 s.f. → use **0.0528**.
 
-## 9. What broke
-
-| #   | Problem                                                               | Fix                                                                                                                    |
-| --- | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| 1   | `ls $D/...` failed: `$D` never set                                    | Set the variable / use relative paths                                                                                  |
-| 2   | Glob `T23_66_Diyo_RNA_spleen*/sequencing_summary_*.txt` found nothing | Files are nested in MinKNOW subfolders; used `find` and a recursive glob                                               |
-| 3   | Job 25340: `syntax error near unexpected token 'newline'`             | `module load <python-module>` placeholder: `<` `>` parsed as redirection. Replaced with `anaconda3/2023.09`            |
-| 4   | Job 25341: `can't open file ... gate_a1.py`                           | Python script was never copied to the cluster                                                                          |
-| 5   | Job 25342 and next attempt: `SyntaxError ... set -euo pipefail`       | Bash wrapper content pasted into `gate_a1.py`                                                                          |
-| 6   | `sbatch gate_a1.py`: "Time limit specification required"              | Submitted the `.py` instead of the `.sh`                                                                               |
-| —   | Clean restart                                                         | Deleted scripts/logs/results, recreated both files one at a time, checked `head -1` and `py_compile` before submitting |
-
-Lessons: check the first line of a file to see what it is (`#!/usr/bin/env python3` vs `#!/bin/bash`); run `python -m py_compile` before `sbatch`; **`sbatch` the `.sh`, and the `.sh` runs the `.py`.**
-
-## 10. Gate submission
+## 9. Gate submission
 
 - Submitted: `<date / time>`
 - Result: `<opened / wrong — what was fixed>`
 
-## 11. Next
+## 10. Next
 
 - Run `bat_spleens/qc_nanopore.py` on both runs → six-panel figure and summary table (Stage 1 deliverable)
 - Write the one-page QC report: is this a good run, and the single biggest problem
