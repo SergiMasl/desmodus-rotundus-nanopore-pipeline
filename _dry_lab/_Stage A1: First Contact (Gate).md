@@ -30,9 +30,20 @@ The summary files are **nested inside MinKNOW run subfolders**, not directly in 
 
 Both runs: same flow cell (FBC09298), same device (MD-101579), 22 columns, `end_reason` is the last column.
 
-## 4. Commands
+## 4. Scripts reference
 
-### 4.1 Inspect the files
+The scripts are in [`scripts/`](scripts/):
+
+- [`run_gate_a1.py`](scripts/run_gate_a1.py) calculates the Stage A1 gate metrics for each run, checks for the CRLF parsing issue, and writes a TSV results file.
+- [`run_gate_a1.sh`](scripts/run_gate_a1.sh) is the Slurm wrapper for running the gate analysis.
+- [`run_qc_a1.sh`](scripts/run_qc_a1.sh) runs `qc_nanopore.py` on both runs and saves the QC outputs.
+- [`run_qc.sh`](scripts/run_qc.sh) is a general single-run QC wrapper; update its summary-file path before use.
+
+The gate wrapper currently invokes `scripts/gate_a1.py`; the script in this folder is named `run_gate_a1.py`. Make sure the filename/path matches in your HPC copy before submitting the wrapper.
+
+## 5. Commands
+
+### 5.1 Inspect the files
 
 ```bash
 cd ~/vamp/binf6350_001
@@ -46,7 +57,7 @@ done
 
 `file` output for both: `ASCII text, with CRLF line terminators`.
 
-### 4.2 Reproduce the CRLF bug
+### 5.2 Reproduce the CRLF bug
 
 ```bash
 F1=T23_66_Diyo_RNA_spleen/20261102_1734_MD-101579_FBC09298_cb4c8893/sequencing_summary_FBC09298_cb4c8893_9b6d8c39.txt
@@ -58,7 +69,7 @@ awk -F'\t' '{sub(/\r$/,"")} $22=="unblock_mux_change"' $F1 | wc -l # 63756  <- F
 md5sum $F1 $F2
 ```
 
-## 5. The CRLF bug
+## 6. The CRLF bug
 
 |                  |                                                                                                                                                                   |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -70,13 +81,13 @@ md5sum $F1 $F2
 
 Note: pandas `read_csv` with default settings handles CRLF itself (the provided `qc_nanopore.py` says so too). The bug shows up with awk, cut, grep, and pandas with `lineterminator="\n"`. Always check the last column.
 
-## 6. Definitions used
+## 7. Definitions used
 
 - **Passed read:** `passes_filtering == TRUE` (MinKNOW Q9 filter)
 - **Passed bases:** sum of `sequence_length_template` over passed reads
 - **unblock_mux_change %:** count ÷ **all** reads in the summary × 100
 
-## 7. Results
+## 8. Results
 
 Source: `results/gate_a1_results.tsv` (not typed from screen).
 
@@ -110,19 +121,19 @@ The handout's extra-credit table lists 850,017 passing reads and 0.85 Gb.
 Run 1 + Run 2 = 799,535 + 50,482 = **850,017** and 0.796 + 0.0528 = **0.849 Gb**.
 So that table is both runs combined, and my numbers reconcile exactly.
 
-## 8. Observations (for the Stage 1 interpretation)
+## 9. Observations (for the Stage 1 interpretation)
 
 - Run 2 (the restart on the same flow cell) produced about a tenth of Run 1's reads despite running 69 h vs 19 h.
 - Run 2 pass rate is much lower (47.9% vs 73.4%).
 - Run 2 unblock rate is much higher (14.3% vs 5.85% of all reads), consistent with more pore blocking after the restart. Relevant to Pair F's question.
 - Watch-out: `qc_nanopore.py` prints passed bases with `:.3f` (3 decimal places), giving `0.053` for Run 2, which is only 2 significant figures. Gate asks for 3 s.f. → use **0.0528**.
 
-## 9. Gate submission
+## 10. Gate submission
 
 - Submitted: `<date / time>`
 - Result: `<opened / wrong — what was fixed>`
 
-## 10. Next
+## 11. Next
 
 - Run `bat_spleens/qc_nanopore.py` on both runs → six-panel figure and summary table (Stage 1 deliverable)
 - Write the one-page QC report: is this a good run, and the single biggest problem
