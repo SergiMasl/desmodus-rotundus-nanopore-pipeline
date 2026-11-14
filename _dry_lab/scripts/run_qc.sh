@@ -24,4 +24,6 @@ if [[ ! -f "$SUMMARY" ]]; then
     exit 1
 fi
 
+#Use realpath to grab the filepath to the qc_nanopore.py
+#/path/to/qc_nanopore.py
 python qc_nanopore.py "$SUMMARY" "$PREFIX"
