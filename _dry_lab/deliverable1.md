@@ -2,6 +2,18 @@
 
 **(Figures for Run 1 and Run 2 submitted separately)**
 
+### Environment
+
+| Item                 | Value                 |
+| -------------------- | --------------------- |
+| Cluster node (login) | `gal-i9`              |
+| Slurm partition      | `Centaurus`           |
+| Module               | `anaconda3/2023.09`   |
+| Python               | 3.11.7                |
+| pandas               | 2.2.0                 |
+| Project folder       | `~/vamp/binf6350_001` |
+
+
 ### Summary Table:
 
 | Metric                                  | Run 1       | Run 2      |
@@ -37,6 +49,17 @@
 | mux_change             | 250       | 13     |
 | analysis_config_change | 220       | 106    |
 | paused                 | 44        | 0      |
+
+## Catching the Carriage Return Bug
+
+|                  |                                                                                                                                                                   |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Symptom**      | `awk` filter `$22=="unblock_mux_change"` returned **0 rows, no error**                                                                                            |
+| **Cause**        | MinKNOW ran on Windows, so lines end in `\r\n`. Tools that split on `\n` leave an invisible `\r` on the last field: `unblock_mux_change\r` ≠ `unblock_mux_change` |
+| **Diagnosis**    | `file` reports "CRLF line terminators"; `cat -A` shows `^M$`; pandas with `lineterminator="\n"` shows the column name as `'end_reason\r'`                         |
+| **Fix**          | Strip `\r` before comparing: `sub(/\r$/,"")` in awk, `.str.strip()` in pandas, or `sed 's/\r$//'`                                                                 |
+| **Confirmation** | Run 1: 0 → 63,756. Run 2: 0 → 15,013. awk and pandas give the same Run 1 count (63,756)                                                                           |
+
 
 ### Analysis:
 
