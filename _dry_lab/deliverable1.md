@@ -2,7 +2,7 @@
 
 **(Figures for Run 1 and Run 2 submitted separately)**
 
-### Environment
+### Environment (From Lab Notebook)
 
 | Item                 | Value                 |
 | -------------------- | --------------------- |
@@ -50,7 +50,7 @@
 | analysis_config_change | 220       | 106    |
 | paused                 | 44        | 0      |
 
-### Catching the Carriage Return Bug
+### Catching the Carriage Return Bug (From Lab Notebook)
 
 |                  |                                                                                                                                                                   |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
