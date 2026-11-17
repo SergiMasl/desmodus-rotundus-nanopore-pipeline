@@ -69,4 +69,4 @@ passed read percentage of 73.4%, but could be improved. The second run does not 
 
 The most significant issue is the substantial sequencing yield drop, and the end_reason breakdown alongside the pore inactivity witnessed when running the MinION support the conclusion 
 that malfunctioning or clogged pores were a large factor alongside deteriorated RNA quality. Only 441 pores produced reads in the first run, while the second one dropped further in active 
-pore count and had a far greater run time. The qscore also appeared to drop during the second run, with a large quality decrease when observing the quality distribution and length vs quality graphs. 
+pore count and had a far greater run time. The qscore also appeared to drop during the second run, with a large quality decrease when observing the quality distribution and length vs quality graphs. The loss of active pores and a suspected clog may have led to a downstream impact for the rest of the run. 
