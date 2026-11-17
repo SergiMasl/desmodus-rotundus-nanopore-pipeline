@@ -68,5 +68,5 @@ partial reading failure in a sizable portion of the device, likely due to pore b
 passed read percentage of 73.4%, but could be improved. The second run does not yield an adequate passed read percentage to be considered decent with a value at only 47.9%. 
 
 The most significant issue is the substantial sequencing yield drop, and the end_reason breakdown alongside the pore inactivity witnessed when running the MinION support the conclusion 
-that malfunctioning or clogged pores were a larger factor than deteriorated RNA quality. Only 441 pores produced reads in the first run, while the second one dropped further in active 
-pore count and had a far greater run time. 
+that malfunctioning or clogged pores were a large factor alongside deteriorated RNA quality. Only 441 pores produced reads in the first run, while the second one dropped further in active 
+pore count and had a far greater run time. The qscore also appeared to drop during the second run, with a large quality decrease when observing the quality distribution and length vs quality graphs. 
