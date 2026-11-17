@@ -63,10 +63,6 @@
 
 ### Analysis:
 
-The first run is significantly better than the second run due to the far greater percentage of passed reads. The MinION’s hardware issues were evident during the first run due to a 
-partial reading failure in a sizable portion of the device, likely due to pore blockages as later evidenced by the increase of mux_change readings. The first run is decent, with a 
-passed read percentage of 73.4%, but could be improved. The second run does not yield an adequate passed read percentage to be considered decent with a value at only 47.9%. 
+The first run is significantly better than the second run due to the far greater percentage of passed reads. The MinION’s hardware issues were evident during the first run due to a partial reading failure in a sizable portion of the device, likely due to pore blockages, as later evidenced by the increase in mux_change readings. The first run is decent, with a passed read percentage of 73.4%, but could be improved. The second run does not yield an adequate passed read percentage to be considered decent, with a value of only 47.9%.
+The most significant issue is the substantial sequencing yield drop, and the end_reason breakdown alongside the pore inactivity witnessed when running the MinION support the conclusion that malfunctioning or clogged pores were a large factor alongside deteriorated RNA quality. Only 441 pores produced reads in the first run, while the second run had fewer active pores and a much longer runtime. The qscore also appeared to drop during the second run, with a large quality decrease when observing the quality distribution and length vs. quality graphs. The loss of active pores and a suspected clog may have led to a downstream decline for the remainder of the run.
 
-The most significant issue is the substantial sequencing yield drop, and the end_reason breakdown alongside the pore inactivity witnessed when running the MinION support the conclusion 
-that malfunctioning or clogged pores were a large factor alongside deteriorated RNA quality. Only 441 pores produced reads in the first run, while the second one dropped further in active 
-pore count and had a far greater run time. The qscore also appeared to drop during the second run, with a large quality decrease when observing the quality distribution and length vs quality graphs. The loss of active pores and a suspected clog may have led to a downstream decline for the remainder of the run. 
