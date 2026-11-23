@@ -1,5 +1,7 @@
 # Lab Notebook Entry — 2026-11-21 — Stage A2: Know Your Reads
 
+-Edited 2026/11/23 by Em Scott
+
 ## 1. Goal
 
 ## Send in as Deliverable #2:
@@ -43,6 +45,12 @@ The scripts are in [`scripts/`](scripts/):
 
 The initial .png was unreadable because the descriptive text for each bin count was too close together. Fixing the scrunched text required additional code to the run_gate_a2_binning.py script. 
 
+Problems from Em: Hard-coding is an issue, as both the Python and Bash scripts were hard-coded. Based on accumulating anomalies with my student HPC directory, I will be reaching out to OneIT to see
+if they can fix my account. After troubleshooting with Paul, peers, and even professors from previous classes, I've concluded that there is a problem with my account and it isn't just my Windows 11
+system. 
+
+The added scripts for Stage 2 have been added to GitHub with a decimal after their respective numbers/order of execution. We hope to find an alternative to the hard-coded scripts, or demonstrate 
+improvements in the following stages. 
 
 ### 5.2 Fix the Scrunched Text by Adding Additional Padding: 
 
