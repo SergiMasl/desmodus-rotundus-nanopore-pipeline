@@ -1,3 +1,4 @@
+  GNU nano 5.6.1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          binning.py
 #!/usr/bin/env python3
 
 import os
@@ -101,8 +102,8 @@ def filter_reads(
 # FILE PATHS
 # ==========================================================
 
-file1 = "path/to/run1/sequencing/summary.txt" # change this to actual working file path
-file2 = "path/to/run2/sequencing/summary.txt" # change this to actual working file path
+file1 = "/users/escott60/batspleen/T23_66_Diyo_RNA_spleen/20261102_1734_MD-101579_FBC09298_cb4c8893/sequencing_summary_FBC09298_cb4c8893_9b6d8c39.txt"
+file2 = "/users/escott60/batspleen/T23_66_Diyo_RNA_spleen_2ndRun/BINF6350_Fall2026_RNA01/T23_66_Diyo_RNA_spleen_2ndrun/20261103_1357_MD-101579_FBC09298_013e8950/sequencing_summary_FBC09298_013e8950_973790c0.txt"
 
 
 # ==========================================================
@@ -359,3 +360,16 @@ def extract_fastq_by_bin(filtered_reads, search_dir, out_dir, run_tag):
         flag = "" if written[lab] == exp else "   <-- MISMATCH"
         print(f"  {lab:<10} {written[lab]:>10,} / {exp:>10,}{flag}")
     print(f"  {'Total':<10} {sum(written.values()):>10,} / {len(filtered_reads):>10,}\n")
+
+extract_fastq_by_bin(filtered_reads1, FASTQ_DIR1, FASTQ_OUT_DIR, "run1")
+extract_fastq_by_bin(filtered_reads2, FASTQ_DIR2, FASTQ_OUT_DIR, "run2")
+
+
+
+
+
+
+
+
+
+
