@@ -1,0 +1,42 @@
+gene_id	location	description
+B2M	NC_071393.1:77873909-77879782	beta-2-microglobulin
+LOC112297492	NC_071396.1:42916505-42931865	BOLA class I histocompatibility antigen, alpha chain BL3-7
+LOC128779386	NC_071396.1:42947647-42962010	BOLA class I histocompatibility antigen, alpha chain BL3-7-like
+LOC128779592	NC_071398.1:49728953-49732461	BOLA class I histocompatibility antigen, alpha chain BL3-7-like
+CD74	NC_071392.1:140011373-140019832	CD74 molecule
+LOC128779530	NC_071397.1:3559233-3562524	class I histocompatibility antigen, Gogo-B*0101 alpha chain
+LOC112313880	NC_071398.1:49832004-49840956	class I histocompatibility antigen, Gogo-B*0102 alpha chain
+LOC128780093	NW_026527348.1:39087-42276	class I histocompatibility antigen, Gogo-C*0203 alpha chain-like
+CIITA	NC_071387.1:107005407-107048126	class II major histocompatibility complex transactivator
+LOC112302159	NC_071397.1:1566613-1578181	DLA class II histocompatibility antigen, DR-1 beta chain
+HHLA1	NC_071394.1:6027386-6050396	HHLA1 neighbor of OC90
+HHLA2	NC_071388.1:86659993-86664473	HHLA2 member of B7 family
+HM13	NC_071392.1:114961354-114999240	histocompatibility minor 13
+LOC112313879	NC_071398.1:49810024-49813038	HLA class I histocompatibility antigen, B alpha chain-like
+LOC112302354	NW_026527483.1:12402-19060	HLA class II histocompatibility antigen, DM alpha chain
+LOC112302240	NW_026527483.1:26418-31399	HLA class II histocompatibility antigen, DM beta chain
+LOC112302328	NC_071397.1:1550790-1555802	HLA class II histocompatibility antigen, DR alpha chain
+LOC112296868	NC_071398.1:91565769-91573439	major histocompatibility complex class I-related gene protein
+LOC112319287	NC_071397.1:42245524-42247556	patr class I histocompatibility antigen, A-108 alpha chain-like
+LOC112298238	NC_071398.1:49860172-49863386	patr class I histocompatibility antigen, A-126 alpha chain
+LOC112302342	NW_026527348.1:30-4133	patr class I histocompatibility antigen, A-126 alpha chain
+LOC112302469	NC_071397.1:926961-932180	patr class I histocompatibility antigen, A-126 alpha chain
+LOC112313875	NC_071398.1:49740438-49745142	patr class I histocompatibility antigen, A-126 alpha chain
+LOC112314045	NC_071398.1:49705869-49709612	patr class I histocompatibility antigen, A-126 alpha chain
+LOC112314061	NC_071398.1:49930974-49935815	patr class I histocompatibility antigen, A-126 alpha chain
+LOC112314062	NC_071398.1:49846142-49849763	patr class I histocompatibility antigen, A-126 alpha chain
+LOC112314063	NC_071398.1:49908145-49911392	patr class I histocompatibility antigen, A-126 alpha chain
+LOC112314064	NC_071398.1:49877549-49880580	patr class I histocompatibility antigen, A-126 alpha chain
+LOC112313876	NC_071398.1:49782389-49793176	patr class I histocompatibility antigen, A-126 alpha chain-like
+LOC112302393	NC_071397.1:18212838-18218255	patr class I histocompatibility antigen, A-2 alpha chain
+LOC112314719	NC_071387.1:131521900-131522491	patr class I histocompatibility antigen, A-2 alpha chain-like
+LOC112302447	NW_026527348.1:10367-21208	patr class I histocompatibility antigen, B-2 alpha chain
+LOC112313872	NC_071398.1:49722459-49726991	putative HLA class I histocompatibility antigen, alpha chain H
+LOC112314059	NC_071398.1:49894593-49897698	saoe class I histocompatibility antigen, A alpha chain-like
+SLFN11	NC_071395.1:108425336-108446300	schlafen family member 11
+SLFN5	NC_071395.1:108450859-108470326	schlafen family member 5
+SLFNL1	NC_071389.1:26620730-26623670	schlafen like 1
+LOC123479457	NC_071397.1:1641340-1648641	SLA class II histocompatibility antigen, DQ haplotype C beta chain
+LOC112302160	NC_071397.1:1625445-1632080	SLA class II histocompatibility antigen, DQ haplotype D alpha chain
+TAPBP	NC_071397.1:1868686-1879332	TAP binding protein
+TAPBPL	NC_071389.1:180712177-180719368	TAP binding protein like

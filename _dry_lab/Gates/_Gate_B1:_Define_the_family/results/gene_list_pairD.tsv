@@ -1,0 +1,40 @@
+symbol	description_regex	note
+LOC112297492		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC128779386		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC128779592		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC128779530		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112313880		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC128780093		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112313879		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112319287		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112298238		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112302342		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112302469		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112313875		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112314045		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112314061		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112314062		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112314063		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112314064		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112313876		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112302393		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112314719		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112302447		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112313872		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112314059		MHC class I heavy chain locus (LOC; species label in name is not orthology)
+LOC112302328		MHC class II DRA
+LOC112302159		MHC class II DRB
+LOC112302160		MHC class II DQA
+LOC123479457		MHC class II DQB
+LOC112302354		MHC class II DMA
+LOC112302240		MHC class II DMB
+HLA-DPA1	histocompatib.*\bDP[- ]?alpha	MHC class II DPA - expected; check annotation
+HLA-DPB1	histocompatib.*\bDP[- ]?beta	MHC class II DPB - expected; check annotation
+HLA-DOA	histocompatib.*\bDO[- ]?alpha	MHC class II DOA - expected; check annotation
+HLA-DOB	histocompatib.*\bDO[- ]?beta	MHC class II DOB - expected; check annotation
+B2M		accessory: class I light chain
+CD74		accessory: class II invariant chain
+CIITA		accessory: class II master transactivator
+TAPBP		accessory: tapasin, class I peptide loading
+TAP1		accessory: class I peptide transporter
+TAP2		accessory: class I peptide transporter

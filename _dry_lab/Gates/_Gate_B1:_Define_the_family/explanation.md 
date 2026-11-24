@@ -1,0 +1,101 @@
+# Explanation: Gate B1 — Define the family (Pair D, MHC)
+
+> Working notes for the repository. The combined final report must be written in our own words
+> (course policy). Use this file as a source of facts and reasoning, not as report text.
+
+## 1. Why this stage exists in the whole project
+
+The project has two tracks:
+
+- **Track A (methods):** raw nanopore direct-RNA reads → QC (A1) → read selection (A2) →
+  the hemoglobin anomaly (A3) → mapping to the *Desmodus* reference (A4) →
+  our Stage 5 question, *are we recovering full-length transcripts?* (A5).
+- **Track B (biology):** take one gene family and inventory it in this spleen:
+  **B1** decide which genes the family contains and find them in the reference →
+  **B2** count reads per gene → **B3** look at transcript form (full length, isoforms).
+
+B1 is the foundation of Track B. B2 can only count reads for genes we have defined and located,
+and B3 needs each gene's transcript IDs and **expected transcript lengths** to judge whether reads are full-length.
+Those lengths are also exactly what our Track A question (Pair D, full-length recovery) compares against,
+so this table links the two tracks.
+
+## 2. Why MHC, and why it is hard
+
+- The spleen is a secondary lymphoid organ. White pulp is full of B cells, T cells and dendritic cells,
+  so antigen-presentation genes should be strongly represented.
+- MHC genes are the most polymorphic genes in vertebrate genomes, and bats have unusual MHC
+  organisation (species-specific class I expansions; class II losses in some lineages).
+- Our sample is ***Diaemus youngi*** but the reference is ***Desmodus rotundus***. For highly polymorphic loci,
+  reads from one species may map poorly or to the wrong paralog in another. The handout calls this
+  "a hard lesson" for Pair D. It matters in B2 (multi-mapping) and B3 (false "novel isoforms").
+
+## 3. How genes are named in this annotation, and why that changed our method
+
+- 30,007 genes; **13,505 (45%) have only a `LOC` number** and no symbol.
+- Class I genes carry names borrowed from **other species**: BoLA (cow), Patr (chimp), Gogo (gorilla),
+  Saoe (monkey), DLA (dog). NCBI's pipeline names a predicted gene after its best database hit, so these labels
+  are not orthology. Bat class I genes have no one-to-one match to human HLA-A/B/C.
+- Therefore we searched **descriptions as well as symbols**. A symbol-only search would miss most of the family,
+  as happened with hemoglobin in Stage A3.
+
+## 4. Inclusion criteria (the decision)
+
+**Rule:** genes whose products form MHC molecules, plus accessory genes without which MHC antigen
+presentation fails.
+
+| Included | Reason |
+|---|---|
+| 23 class I heavy-chain loci | MHC class I molecules. Each locus counted separately because B2 counts per locus |
+| DRA, DRB, DQA, DQB, DMA, DMB, DPA, DPB, DOA, DOB | The canonical MHC class II genes (DM/DO are the peptide-loading editors) |
+| B2M | Class I light chain; class I cannot fold without it |
+| CD74 | Invariant chain; chaperones class II and blocks the groove until loading |
+| CIITA | Master transcription factor for class II expression |
+| TAPBP (tapasin) | Holds class I in the peptide-loading complex |
+| TAP1, TAP2 | Pump peptides into the ER for class I |
+
+| Excluded | Reason |
+|---|---|
+| MR1-like (LOC112296868) | MHC-like fold, but presents microbial metabolites to MAIT cells, not peptides |
+| TAPBPL | Optional class I peptide editor (TAPBPR), not required |
+| PSMB8, PSMB9 | Immunoproteasome; supports class I but is not part of the MHC molecule or its loading machinery. Defensible to add (list would become 41/37) |
+| SLFN11, SLFN5, SLFNL1, HHLA1, HHLA2, HM13, IDH1, IDH2 | False keyword hits ("hla" inside schlafen, "HLA" inside HHLA, *minor* histocompatibility, "NADP(" matching "DP(") |
+
+## 5. Results
+
+| | Count |
+|---|---|
+| Genes on final list | **39** |
+| Located in GCF_022682495.2 annotation | **35** |
+| Not annotated | **4**: HLA-DPA1, HLA-DPB1, HLA-DOA, HLA-DOB |
+
+Observations:
+- **Class I is expanded:** 23 heavy-chain loci, many clustered on NC_071398.1 (~49.70–49.94 Mb),
+  consistent with a lineage-specific expansion. Two more sit on an unplaced scaffold (NW_026527348.1).
+- **Class II is reduced:** one DRA, one DRB, one DQA/DQB pair, DMA/DMB. DMA and DMB are on an
+  unplaced scaffold (NW_026527483.1). No DP and no DO.
+- **The MHC class II region is intact around NC_071397.1 ~1.55–1.88 Mb:**
+  DRA, DRB, DQA, DQB, TAP2, PSMB8, TAP1, PSMB9 and TAPBP sit together in the classic mammalian order.
+- Coordinates, transcript IDs and transcript lengths for every located gene are in
+  `results/b1_gene_table.tsv` and `results/b1_transcripts.tsv`.
+
+## 6. "Not annotated" is not "not expressed"
+
+The 4 missing genes are a statement about **the reference annotation only**:
+- DP and DO may be truly lost in this bat lineage, or present but unassembled or unannotated
+  (genes on unplaced scaffolds show the assembly is not complete around the MHC).
+- Nothing here says whether any gene is **expressed** in this spleen. That is tested in B2 by counting reads.
+- A gene can also be annotated but undetectable because *Diaemus* reads diverge too far from the *Desmodus* sequence.
+
+## 7. What carries forward
+
+- **B2:** expect heavy multi-mapping among the 23 class I loci (near-identical paralogs, like the two
+  hemoglobin copies in A3). Counting rule needed: per-locus primary alignments vs a summed "class I" total.
+- **B3 and A5:** use `b1_transcripts.tsv` lengths as the expected full-length targets.
+
+## 8. Papers (≥5 required — fill in after reading)
+
+1. 
+2. 
+3. 
+4. 
+5. 
