@@ -102,9 +102,8 @@ def filter_reads(
 # FILE PATHS
 # ==========================================================
 
-file1 = "/users/escott60/batspleen/T23_66_Diyo_RNA_spleen/20261102_1734_MD-101579_FBC09298_cb4c8893/sequencing_summary_FBC09298_cb4c8893_9b6d8c39.txt"
-file2 = "/users/escott60/batspleen/T23_66_Diyo_RNA_spleen_2ndRun/BINF6350_Fall2026_RNA01/T23_66_Diyo_RNA_spleen_2ndrun/20261103_1357_MD-101579_FBC09298_013e8950/sequencing_summary_FBC09298_013e8950_973790c0.txt"
-
+file1 = "/path/to/sequencing/summary/1" #change this
+file2 = "/path/to/sequencing/summary/2" #change this
 
 # ==========================================================
 # FILTERING PARAMETERS
